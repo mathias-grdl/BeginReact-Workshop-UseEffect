@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+// e56fd640
 
 export const useApiKeyRequired = () => {
 	useEffect(() => {
@@ -7,7 +8,9 @@ export const useApiKeyRequired = () => {
 
 		if (!localStorageApiKey) {
 			while (!localStorage.getItem("omdbApiKey")) {
-				const apiKey = prompt("Quel est ton OMDB API KEY ?");
+				const apiKey = prompt(
+					"Quel est ton OMDB API KEY ? https://www.omdbapi.com/apikey.aspx | exemple : e56fd640"
+				);
 
 				if (apiKey) {
 					localStorage.setItem("omdbApiKey", apiKey);
