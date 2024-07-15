@@ -1,11 +1,13 @@
 "use client";
 
+import { useApiKeyRequired } from "@/app/hooks/useApiKeyRequired";
 import { useDebounceValue } from "@/app/hooks/useDebounceValue";
 import { useQueryState } from "@/app/hooks/useQueryState";
 
 export default function SearchBar() {
 	const [query, setQuery] = useQueryState("search", "");
 	const debounceValue = useDebounceValue(query, 500);
+	useApiKeyRequired();
 
 	return (
 		<>
