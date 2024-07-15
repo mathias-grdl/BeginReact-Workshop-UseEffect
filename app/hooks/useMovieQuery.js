@@ -12,7 +12,7 @@ export const useMovieQuery = (search) => {
 			throw new Error("Invalid API KEY");
 		}
 
-		const url = new URL("http://www.omdbapi.com");
+		const url = new URL("https://www.omdbapi.com");
 		url.searchParams.set("s", search);
 		url.searchParams.set("apiKey", apiKey);
 
