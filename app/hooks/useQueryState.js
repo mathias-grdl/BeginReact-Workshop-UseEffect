@@ -22,7 +22,6 @@ export const useQueryState = (queryKey, initialValue) => {
 			params.set(queryKey, queryState);
 		}
 
-		console.log("new", newURL.toString());
 		window.history.replaceState(null, "", newURL.toString());
 	}, [queryKey, queryState]);
 
